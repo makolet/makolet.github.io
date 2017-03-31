@@ -8,6 +8,7 @@ angular.
           self.addTheItem = function () {
             var item = {name:self.addedItem};
             self.makoletList.push(item);
+            self.addedItem="";
           }
         }
       ]
