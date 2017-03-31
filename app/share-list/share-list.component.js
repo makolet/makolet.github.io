@@ -8,7 +8,7 @@ angular.
         var url = 'https://makolet.github.io/'; 
         var self = this;
         this.getUrl = function () {
-          return url + encodeQueryData(self.makoletList);
+          return url + '?' + encodeQueryData(self.makoletList);
         }; 
       }
     ]
