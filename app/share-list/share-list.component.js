@@ -17,10 +17,9 @@ angular.
   
   
 function encodeQueryData(data) {
-  
+  var ret = [];
   var arrayLength = data.length;
   for (var i = 0; i < arrayLength; i++) {
-    alert(data[i]);
     var itemObj = data[i];
     ret.push(encodeURIComponent(itemObj.name));
   }
