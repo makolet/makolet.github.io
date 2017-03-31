@@ -4,11 +4,12 @@ angular.
     templateUrl: 'app/share-list/share-list.template.html',
     controller: ['sharedProperties', function shareListController(sharedProperties) {
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
-        this.makoletList = sharedProperties.field; 
+        this.makoletList = sharedProperties.field;
+        var url = 'https://makolet.github.io/'; 
         var self = this;
         this.getUrl = function () {
-          return encodeQueryData(self.makoletList);
-        } 
+          return url + encodeQueryData(self.makoletList);
+        }; 
       }
     ]
   });
