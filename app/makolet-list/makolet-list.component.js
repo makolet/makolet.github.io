@@ -5,13 +5,13 @@ angular.
     controller: ['sharedProperties', function makoletListController(sharedProperties) {
         this.makoletList = findGetParameter();/*[
           {
-            name: 'Nexus S',
+            name: 'Nexus S'
             
           }, {
-            name: 'Motorola XO',
+            name: 'Motorola XO'
           
           }, {
-            name: 'MOTOROLA XO',
+            name: 'MOTOROLA XO'
           
           }
         ];*/
@@ -26,7 +26,8 @@ function findGetParameter() {
   tmp = [];
   var items = location.search.substr(1).split("&");
   for (var index = 0; index < items.length; index++) {
-    result.push(decodeURIComponent(items[index]));
+    var item = {name: decodeURIComponent(items[index])};
+    result.push(item);
   }
   return result;
 }
