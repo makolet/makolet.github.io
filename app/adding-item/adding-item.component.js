@@ -6,7 +6,8 @@ angular.
           var self = this;
           self.makoletList = sharedProperties.field;
           self.addTheItem = function () {
-            var item = {name:self.addedItem};
+            var itemName = self.addedItem;
+            var item = {name:itemName};
             self.makoletList.push(item);
             self.addedItem="";
           }
