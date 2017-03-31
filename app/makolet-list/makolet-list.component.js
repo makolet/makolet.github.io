@@ -2,8 +2,8 @@ angular.
   module('makoletList').
   component('makoletList', {
     templateUrl: 'app/makolet-list/makolet-list.template.html',
-    controller: ['$scope','sharedProperties', function makoletListController($scope, sharedProperties) {
-        $scope.makoletList = [
+    controller: ['sharedProperties', function makoletListController(sharedProperties) {
+        this.makoletList = [
           {
             name: 'Nexus S',
             
@@ -15,7 +15,7 @@ angular.
           
           }
         ];
-        sharedProperties.field = $scope.makoletList;
+        sharedProperties.field = this.makoletList;
       }
     ]
   });
