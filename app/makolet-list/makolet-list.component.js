@@ -29,6 +29,6 @@ function findGetParameter() {
     var item = {name: decodeURIComponent(items[index])};
     result.push(item);
   }
-  console.log(5 + 6);
+  console.log(result);
   return result;
 }
