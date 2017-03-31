@@ -1,3 +1,3 @@
 angular.module('makoletApp', [
-  'makoletList','addingItem'
+  'makoletList','addingItem','shareList'
 ]);
