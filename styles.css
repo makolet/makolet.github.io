@@ -67,3 +67,15 @@ p.makoletListItem {
 .strike {
     text-decoration: line-through;
 }
+
+.sharePanel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 10px;
+}
+
+.sharePanel a {
+    display: block;
+    padding: 10px;
+}
