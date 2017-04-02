@@ -1,5 +1,11 @@
-<div>
-    <ul>
-        <li ng-repeat="item in $ctrl.makoletList">{{item.name}}</li>
+<div class='makoletList'>
+    <ul class='makoletList'>
+        <li ng-repeat='item in $ctrl.makoletList'>
+            <div class='makoletListItem'>
+                <input class='right' type="checkbox"/>
+                <i class="fa fa-close left"></i>
+                <p class='makoletList'>{{item.name}}</p>
+            </div>
+        </li>
     </ul>
 </div>
