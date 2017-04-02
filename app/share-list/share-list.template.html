@@ -1,4 +1,16 @@
 <div class='sharePanel'>
     <a ng-href="whatsapp://send?text={{$ctrl.getUrl()}}" ng-hide="!$ctrl.isMobile" data-action="share/whatsapp/share"><i class="fa fa-whatsapp" style="font-size:24px"></i></a>
-    <a><i class="fa fa-clone" style="font-size:24px"></i></a>
+    <a class='copyLink'data-clipboard-action="copy" data-clipboard-target=".toCopy"><i class="fa fa-clone" style="font-size:24px"></i></a>
+    <div style='display: none;' class="toCopy">sdfsdfsdfsdfsdf</div>
+    <script>
+        var clipboard = new Clipboard('.copyLink');
+
+        clipboard.on('success', function(e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+    </script>
 </div>
