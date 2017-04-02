@@ -11,10 +11,10 @@ ul.makoletList {
 div.makoletList {
     height: 100%;
     max-width: 500px;
+    width: 60%;
 }
 
 div.makoletListItem {
-    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -62,4 +62,8 @@ p.makoletListItem {
 
 .bottomLineFixed input:focus {
     border: 3px solid #555;
+}
+
+.strike {
+    text-decoration: line-through;
 }

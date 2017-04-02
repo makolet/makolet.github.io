@@ -2,9 +2,9 @@
     <ul class='makoletList'>
         <li ng-repeat='item in $ctrl.makoletList'>
             <div class='makoletListItem'>
-                <input class='right' type="checkbox"/>
-                <i class="fa fa-close left"></i>
-                <p class='makoletList'>{{item.name}}</p>
+                <input class='right' type="checkbox" ng-model="deleted"/>
+                <a ng-click='$ctrl.removeItem(item)' class="left"><i class="fa fa-close"></i></a>
+                <p class='makoletList' ng-class="{strike: deleted}">{{item.name}}</p>
             </div>
         </li>
     </ul>

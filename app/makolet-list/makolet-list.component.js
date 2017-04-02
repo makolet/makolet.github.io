@@ -3,8 +3,15 @@ angular.
   component('makoletList', {
     templateUrl: 'app/makolet-list/makolet-list.template.html',
     controller: ['sharedProperties', function makoletListController(sharedProperties) {
+        var self = this;
         this.makoletList = findGetParameter();
         sharedProperties.field = this.makoletList;
+        this.removeItem = function(item) {
+          var index = self.makoletList.indexOf(item);
+          if (index > -1) {
+            self.makoletList.splice(index, 1);
+          }
+        }
       }
     ]
   });
