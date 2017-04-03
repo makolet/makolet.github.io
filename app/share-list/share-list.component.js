@@ -5,31 +5,33 @@ angular.
     controller: ['sharedProperties', function shareListController(sharedProperties) {
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
         this.makoletList = sharedProperties.field;
-        var url = 'https://makolet.github.io/'; 
+        
         var self = this;
         this.getUrl = function () {
-          var params = encodeURIComponent(encodeQueryData(self.makoletList));
-          if (isEmpty(params))
-          {
-            return url;
-          }
-          return url + '?' + params;
+          return encodeQueryData(self.makoletList);
         }; 
       }
     ]
   });
   
-  
+var url = 'https://makolet.github.io/';  
   
 function encodeQueryData(data) {
   var ret = [];
+  var finalUrl = "";
   var arrayLength = data.length;
   for (var i = 0; i < arrayLength; i++) {
     var itemObj = data[i];
-    ret.push(encodeURIComponent(itemObj.name));
+    ret.push(itemObj.name);
   }
   
-  return ret.join('&');
+  var getArgs = ret.join('&');
+  if (isEmpty(getArgs)) {
+    finalUrl = url;
+  } else {
+    finalUrl = url + '?' + (getArgs);
+  }
+  return finalUrl;
 }
 
 
