@@ -1,5 +1,5 @@
 <div class='sharePanel'>
-    <a ng-href="whatsapp://send?text={{$ctrl.getUrl()}}" ng-hide="!$ctrl.isMobile" data-action="share/whatsapp/share"><i class="fa fa-whatsapp" style="font-size:24px"></i></a>
-    <a ngclipboard data-clipboard-text="{{$ctrl.getUrl()}}"><i class="fa fa-clone" style="font-size:24px"></i></a>
+    <a ng-href="whatsapp://send?text={{$ctrl.getUrl(true)}}" ng-hide="!$ctrl.isMobile" data-action="share/whatsapp/share"><i class="fa fa-whatsapp" style="font-size:24px"></i></a>
+    <a ngclipboard data-clipboard-text="{{$ctrl.getUrl(false)}}"><i class="fa fa-clone" style="font-size:24px"></i></a>
     <div id="food" style='display: none;' class="toCopy">sdfsdfsdfsdfsdf</div>
 </div>
