@@ -1,1 +1,1 @@
-angular.module('shareList', []);
+angular.module('shareList', ['ngclipboard']);
