@@ -16,7 +16,7 @@ angular.
   
 var url = 'https://makolet.github.io/';  
   
-function encodeQueryData(data) {
+function encodeQueryData(data, forWhatsApp) {
   var ret = [];
   var finalUrl = "";
   var arrayLength = data.length;
@@ -25,11 +25,17 @@ function encodeQueryData(data) {
     ret.push(itemObj.name);
   }
   
-  var getArgs = ret.join(encodeURIComponent('&'));
+  var getArgs;
+  if (forWhatsApp) {
+    getArgs = ret.join(encodeURIComponent('&'));
+  } else {
+    getArgs = ret.join('&');
+  }
+  
   if (isEmpty(getArgs)) {
     finalUrl = url;
   } else {
-    finalUrl = url + '?' + (getArgs);
+    finalUrl = url + '?' + getArgs;
   }
   return finalUrl;
 }
