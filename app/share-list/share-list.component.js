@@ -7,8 +7,8 @@ angular.
         this.makoletList = sharedProperties.field;
         
         var self = this;
-        this.getUrl = function () {
-          return encodeQueryData(self.makoletList);
+        this.getUrl = function (forWhatsApp) {
+          return encodeQueryData(self.makoletList, forWhatsApp);
         }; 
       }
     ]
