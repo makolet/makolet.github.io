@@ -25,7 +25,7 @@ function encodeQueryData(data) {
     ret.push(itemObj.name);
   }
   
-  var getArgs = ret.join('&');
+  var getArgs = ret.join(encodeURIComponent('&'));
   if (isEmpty(getArgs)) {
     finalUrl = url;
   } else {
