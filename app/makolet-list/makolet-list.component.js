@@ -19,6 +19,7 @@ angular.
 function findGetParameter() {
   var result = [];
   var items = location.search.substr(1).split("&");
+  items.split('_').join(' ');
   for (var index = 0; index < items.length; index++) {
     var item = decodeURIComponent(items[index]);
     if (!isEmpty(item))

@@ -28,10 +28,11 @@ function encodeQueryData(data, forWhatsApp) {
   var getArgs;
   if (forWhatsApp) {
     getArgs = ret.join(encodeURIComponent('&'));
-    getArgs = getArgs.split(' ').join(encodeURIComponent(' '));
   } else {
     getArgs = ret.join('&');
   }
+
+  getArgs = getArgs.split(' ').join('_');
   
   if (isEmpty(getArgs)) {
     finalUrl = url;
