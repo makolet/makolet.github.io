@@ -4,8 +4,8 @@ angular.
     templateUrl: 'app/makolet-list/makolet-list.template.html',
     controller: ['sharedProperties', function makoletListController(sharedProperties) {
         var self = this;
-        this.makoletList = findGetParameter();
-        sharedProperties.field = this.makoletList;
+        findGetParameter(sharedProperties.field);
+        this.makoletList = sharedProperties.field;
         this.removeItem = function(item) {
           var index = self.makoletList.indexOf(item);
           if (index > -1) {
@@ -16,8 +16,7 @@ angular.
     ]
   });
   
-function findGetParameter() {
-  var result = [];
+function findGetParameter(result) {
   var items = location.search.substr(1).split("&");
   
   for (var index = 0; index < items.length; index++) {
