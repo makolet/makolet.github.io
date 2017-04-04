@@ -12,6 +12,12 @@ angular.
             self.makoletList.splice(index, 1);
           }
         }
+
+        window.onbeforeunload = function() {
+          if (self.makoletList.length > 0) {
+            return "are you sure you want to leave?";
+          }
+        }
       }
     ]
   });
