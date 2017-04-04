@@ -10,6 +10,7 @@ angular.
             var item = {name:itemName};
             self.makoletList.push(item);
             self.addedItem="";
+            console.log(sharedProperties.field);
           }
         }
       ]
