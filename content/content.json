@@ -1,0 +1,8 @@
+{
+	"en":{ 
+		"errorEmptyItem":"Can't add empty item."
+	},
+	"he":{
+		"errorEmptyItem":"אי אפשר להוסיף פריט ריק."
+	}
+}

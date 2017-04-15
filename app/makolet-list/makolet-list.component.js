@@ -1,11 +1,12 @@
+"use strict";
 angular.
   module('makoletList').
   component('makoletList', {
     templateUrl: 'app/makolet-list/makolet-list.template.html',
     controller: ['sharedProperties', function makoletListController(sharedProperties) {
         var self = this;
-        findGetParameter(sharedProperties.field);
-        this.makoletList = sharedProperties.field;
+        findGetParameter(sharedProperties.makoletList);
+        this.makoletList = sharedProperties.makoletList;
         this.removeItem = function(item) {
           var index = self.makoletList.indexOf(item);
           if (index > -1) {

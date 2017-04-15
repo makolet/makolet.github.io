@@ -1,10 +1,16 @@
+"use strict";
 angular.
   module('shareList').
   component('shareList', {
     templateUrl: 'app/share-list/share-list.template.html',
-    controller: ['sharedProperties', function shareListController(sharedProperties) {
+    controller: ['sharedProperties', '$scope', function shareListController(sharedProperties,$scope) {
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
-        this.makoletList = sharedProperties.field;
+        this.makoletList = sharedProperties.makoletList;
+        
+        sharedProperties.getContent().then(function(result) {
+            $scope.variableName = result['he'].errorEmptyItem;
+          }
+        );
         
         var self = this;
         this.getUrl = function (forWhatsApp) {
@@ -14,6 +20,10 @@ angular.
     ]
   });
   
+
+
+
+
 var url = 'https://makolet.github.io/';  
   
 function encodeQueryData(data, forWhatsApp) {
@@ -41,9 +51,6 @@ function encodeQueryData(data, forWhatsApp) {
   }
   return finalUrl;
 }
-
-
-
 
 
 function isEmpty(obj) 
