@@ -12,6 +12,7 @@ var sharedProperties = myApp.factory('sharedProperties', function($http){
       makoletList: [],
       getContent: function() {
         return $http.get("content/content.json").then(function(response) {
+            console.log("call http!!!!!!!");
             content.content = response.data;
             return response.data;
          }) 

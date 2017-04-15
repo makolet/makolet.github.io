@@ -7,11 +7,6 @@ angular.
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
         this.makoletList = sharedProperties.makoletList;
         
-        sharedProperties.getContent().then(function(result) {
-            $scope.variableName = result['he'].errorEmptyItem;
-          }
-        );
-        
         var self = this;
         this.getUrl = function (forWhatsApp) {
           return encodeQueryData(self.makoletList, forWhatsApp);
