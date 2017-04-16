@@ -8,22 +8,23 @@ angular.
           self.makoletList = sharedProperties.makoletList;
           self.toHideErrorEmptyItem = true;
           self.addTheItem = function () {
-            if (isEmpty(self.addedItem))
-            {
-              self.toHideErrorEmptyItem = false;
-              return;
-            }
-            self.toHideErrorEmptyItem = true;
-            var itemName = self.addedItem;
-            var item = {name:itemName};
-            self.makoletList.push(item);
-            self.addedItem="";
+              if (isEmpty(self.addedItem))
+              {
+                  self.toHideErrorEmptyItem = false;
+                  return;
+              }
+              self.toHideErrorEmptyItem = true;
+              var itemName = self.addedItem;
+              var item = {name:itemName};
+              self.makoletList.push(item);
+              self.addedItem="";
           }
 
           sharedProperties.getContent().then(function(result) {
-              $scope.errorEmptyItem = result['he'].errorEmptyItem;
+              $scope.content = result;
             }
           );
+          $scope.language = sharedProperties.getPreferredLanguage(); 
         }
       ]
     }
