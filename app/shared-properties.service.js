@@ -3,15 +3,12 @@ var myApp = angular.module('makoletApp')
 
 var sharedProperties = myApp.factory('sharedProperties', function($http){
     var content = {};
-
-    $http.get("content/content.json").then(function(response) {
-            content.content = response.data;
-         });
+    var contentPromis = $http.get("content/content.json"); 
 
     return { 
       makoletList: [],
       getContent: function() {
-        return $http.get("content/content.json").then(function(response) {
+        return contentPromis.then(function(response) {
             console.log("call http!!!!!!!");
             content.content = response.data;
             return response.data;

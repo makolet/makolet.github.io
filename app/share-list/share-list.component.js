@@ -5,8 +5,7 @@ angular.
     templateUrl: 'app/share-list/share-list.template.html',
     controller: ['sharedProperties', '$scope', function shareListController(sharedProperties,$scope) {
         this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent);
-        this.makoletList = sharedProperties.makoletList;
-        
+        this.makoletList = sharedProperties.makoletList;        
         var self = this;
         this.getUrl = function (forWhatsApp) {
           return encodeQueryData(self.makoletList, forWhatsApp);
