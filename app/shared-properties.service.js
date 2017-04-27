@@ -5,9 +5,8 @@ var sharedProperties = myApp.factory('sharedProperties', function($http){
     var content = {};
     var contentPromis = $http.get("content/content.json"); 
     var language = populatelanguage();
-    var lang = window.navigator.userLanguage || window.navigator.language;
-    console.log(lang);
-    language.val = lang;
+    console.log(language);
+    alert(language.val);
 
     return { 
       makoletList: [],
@@ -31,6 +30,9 @@ var sharedProperties = myApp.factory('sharedProperties', function($http){
   }
 );
 
+
+
+
 function populatelanguage() {
     var language = {val: "en"};
     var lan = getCookie("language");
@@ -43,12 +45,16 @@ function populatelanguage() {
     return language;
 }
 
+
+
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+
 
 function getCookie(cname) {
     var name = cname + "=";
