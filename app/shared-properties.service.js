@@ -31,7 +31,7 @@ var sharedProperties = myApp.factory('sharedProperties', function($http){
 );
 
 
-
+var validLang = ["he","en"];
 
 function populatelanguage() {
     var language = {val: "en"};
@@ -39,9 +39,13 @@ function populatelanguage() {
     console.log("populatelanguage " + lan);
     if (isEmpty(lan)) {
         lan = window.navigator.userLanguage || window.navigator.language;
+        lan = lan.substring(0, 2);
+        if (!validLang.includes(lan)) {
+            lan = "en";
+        }
         setCookie("language",lan,365);
     }
-    language.val = lan;
+    language.val = lan.substring(0, 2);
     return language;
 }
 
